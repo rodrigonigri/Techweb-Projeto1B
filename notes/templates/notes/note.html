@@ -1,0 +1,25 @@
+{% extends "notes/index.html" %}
+{% load static %}
+
+{% block nota %}
+
+{% for note in notes %}
+
+<div class="card">
+    <form class="delete" method="post" action="delete">
+    {% csrf_token %}
+      <input type="hidden" name="delete" value="{{note.id}}">
+      <button class="btn" id="del1" type="submit"> X </button>
+    </form>
+      <h3 class="card-title">{{note.title}}</h3>
+      <div class="card-content">
+        <p>
+          {{note.content}}
+        </p>
+      </div>
+    </div>
+
+{% endfor %}
+
+{% endblock %}
+  

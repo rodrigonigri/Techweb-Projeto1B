@@ -11,13 +11,16 @@
       <input type="hidden" name="delete" value="{{note.id}}">
       <button class="btn" id="del1" type="submit"> X </button>
     </form>
-      <h3 class="card-title">{{note.title}}</h3>
-      <div class="card-content">
-        <p>
-          {{note.content}}
-        </p>
-      </div>
-    </div>
+
+    <form class="update" method="post" action="update">
+      {% csrf_token %}
+        <input type="hidden" name="update" value="{{note.id}}">
+        <input id="{{note.id}}-title" class="card-title" name="title" value="{{note.title}}"/>
+        <textarea id="{{note.id}}-details" class="card-details" name="content">{{note.content}}</textarea>
+        
+        <button class="btn" id="upd1" type="submit"> Update </button>
+    </form>
+</div>
 
 {% endfor %}
 

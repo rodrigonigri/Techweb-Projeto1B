@@ -104,8 +104,36 @@ Algumas informações úteis e dicas:
  .card-title{
    font-size: 1rem;
    font-weight: bold;
-   margin-bottom: 1rem;
+   margin-top: 2rem;
+   margin-bottom: 0rem;
+   background: transparent;
+   border-style: hidden;
+   font-family: 'Permanent Marker', cursive;
  }
+
+ .card-details{
+  font-size: larger;
+  background: transparent;
+  border-style: hidden;
+  outline: none;
+  resize: none;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 0.9rem;
+}
+
+.delete{
+  position: absolute;
+  right: 0px;
+  top:0px
+}
+
+.update{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+
  
  .card-color-1{background-color: #ead3a7;}
  .card-color-2{background-color: #9de0f5;}
@@ -188,3 +216,15 @@ Algumas informações úteis e dicas:
    height: 30px;
    padding: 10px;
  }
+
+ #upd1{
+  background-color: green;
+  position: absolute;
+  top: 6px;
+  right: 50px;
+  width: 4rem;
+  height: 30px;
+  padding: 10px;
+  margin-left: 30px;
+}
+

@@ -20,3 +20,19 @@ def delete(request):
         Note.objects.get(id=id_).delete()
         return redirect('index')
 
+
+def update(request):
+    if request.method == "POST":
+        id_ = request.POST.get("update")
+        title = request.POST.get('title')
+        content = request.POST.get('content')
+        note = Note.objects.get(id=id_)
+        note.title = title
+        note.content = content
+        note.save()
+        '''
+        id_ = request.POST.get("update")
+        title = request.POST.get('titulo')
+        content = request.POST.get('detalhes')
+        Note.objects.update(id=id_, title=title, content=content).save()'''
+        return redirect('index')
